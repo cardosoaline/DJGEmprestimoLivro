@@ -1,0 +1,18 @@
+package com.djg.emprestalivroapi.emprestalivroapi.service;
+
+import org.springframework.stereotype.Service;
+
+import com.djg.emprestalivroapi.emprestalivroapi.dominio.Livro;
+import com.djg.emprestalivroapi.emprestalivroapi.repository.LivroRepository;
+
+@Service
+public class LivroService {
+	
+	private LivroRepository livroRepository;
+	
+	public void salva (Livro livro) {
+		
+		livroRepository.save(livro);
+	}
+
+}

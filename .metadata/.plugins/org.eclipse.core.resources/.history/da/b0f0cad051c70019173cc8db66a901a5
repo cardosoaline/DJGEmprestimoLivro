@@ -1,0 +1,59 @@
+package dominio;
+
+public class Emprestimo {
+	
+	private String codigoEmprestimo;
+	
+	private String usuario;
+	
+	private String livro;
+	
+	private String dataSolicitação;
+	
+	private String dataDevolucao;
+
+	public String getCodigoEmprestimo() {
+		return codigoEmprestimo;
+	}
+
+	public void setCodigoEmprestimo(String codigoEmprestimo) {
+		this.codigoEmprestimo = codigoEmprestimo;
+	}
+
+	public String getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(String usuario) {
+		this.usuario = usuario;
+	}
+
+	public String getLivro() {
+		return livro;
+	}
+
+	public void setLivro(String livro) {
+		this.livro = livro;
+	}
+
+	public String getDataSolicitação() {
+		return dataSolicitação;
+	}
+
+	public void setDataSolicitação(String dataSolicitação) {
+		this.dataSolicitação = dataSolicitação;
+	}
+
+	public String getDataDevolucao() {
+		return dataDevolucao;
+	}
+
+	public void setDataDevolucao(String dataDevolucao) {
+		this.dataDevolucao = dataDevolucao;
+	}
+	
+	
+	
+	
+
+}

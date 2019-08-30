@@ -1,0 +1,19 @@
+package com.djg.emprestalivroapi.emprestalivroapi.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.djg.emprestalivroapi.emprestalivroapi.dominio.Emprestimo;
+import com.djg.emprestalivroapi.emprestalivroapi.repository.EmprestaLivroRepository;
+
+public class EmprestaLivroService {
+	
+	@Autowired
+	 private EmprestaLivroRepository emprestaLivroRepository;
+	
+	public void salva(Emprestimo emprestimo) {
+		
+	   emprestaLivroRepository.save(emprestimo);
+		
+	}
+
+}

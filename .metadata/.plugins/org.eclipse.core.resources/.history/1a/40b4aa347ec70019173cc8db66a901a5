@@ -1,0 +1,45 @@
+package com.djg.emprestalivroapi.emprestalivroapi.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.djg.emprestalivroapi.emprestalivroapi.dominio.Emprestimo;
+import com.djg.emprestalivroapi.emprestalivroapi.dominio.Livro;
+import com.djg.emprestalivroapi.emprestalivroapi.dominio.Usuario;
+import com.djg.emprestalivroapi.emprestalivroapi.repository.EmprestaLivroRepository;
+import com.djg.emprestalivroapi.emprestalivroapi.repository.LivroRepository;
+import com.djg.emprestalivroapi.emprestalivroapi.repository.UsuarioRepository;
+import com.djg.emprestalivroapi.emprestalivroapi.vo.EmprestimoVO;
+
+@Service
+public class EmprestaLivroService {
+	
+	@Autowired
+	 private EmprestaLivroRepository emprestaLivroRepository;
+	
+	@Autowired
+	private LivroRepository livroRepository;
+	
+	@Autowired
+	private UsuarioRepository usuarioRepository;
+	
+	
+	public void salva(EmprestimoVO emprestimoVO) {
+		
+		Livro livro = livroRepository.findById(emprestimoVO.getCodigoLivro()).get();
+		
+		Usuario usuario = usuarioRepository.findById(emprestimoVO.getCodigoUsuario()).get();
+		
+		Emprestimo emprestimo = new Emprestimo();
+		emprestimo.setLivro(livro);
+		emprestimo.setUsuario(usuario);
+		emprestimo.setDataDevolucao(emprestimoVO.getDateDevolucao());
+		emprestimo.setDataSolicitação(emprestimoVO.getDataSolicitacao());
+		
+				
+		
+	   emprestaLivroRepository.save(emprestimo);
+		
+	}
+
+}

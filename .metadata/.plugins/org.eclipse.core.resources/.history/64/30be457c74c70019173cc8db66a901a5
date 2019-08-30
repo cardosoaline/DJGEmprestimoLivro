@@ -1,0 +1,5 @@
+package com.djg.emprestalivroapi.emprestalivroapi.repository;
+
+public interface LivroRepository {
+
+}
